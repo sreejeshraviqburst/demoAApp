@@ -1,7 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: html-namespace
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: html-deployment
+  namespace: html-namespace
 spec:
   replicas: 1
   selector:
@@ -22,6 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: html-service
+  namespace: html-namespace
 spec:
   selector:
     app: html-app

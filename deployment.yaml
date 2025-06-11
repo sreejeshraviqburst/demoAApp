@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: html-container
-        image: html-app:latest
+        image: nginx:latest
         ports:
         - containerPort: 80
 ---
